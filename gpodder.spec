@@ -1,6 +1,6 @@
 %define name	gpodder
 %define version	0.9.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
@@ -8,6 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.bz2
+Patch: gpodder-0.9.2-download-after-update.patch
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -32,6 +33,7 @@ feeds as you like.
 
 %prep
 %setup -q
+%patch -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
