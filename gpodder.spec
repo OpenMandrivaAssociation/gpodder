@@ -1,6 +1,6 @@
 %define name	gpodder
-%define version	0.9.2
-%define release %mkrel 2
+%define version	0.9.3
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
@@ -8,7 +8,6 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.bz2
-Patch: gpodder-0.9.2-download-after-update.patch
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -24,6 +23,8 @@ Requires:	python-pyxml
 Requires:	python-gpod
 Requires:	pymad
 Requires:	python-ID3
+# gw required for content length detection
+Requires:	mplayer
 BuildArch:	noarch
 
 %description
@@ -32,8 +33,7 @@ podcast feeds for you and automatically downloads all podcasts from as many
 feeds as you like.
 
 %prep
-%setup -q
-%patch -p0
+%setup -q -n %name-%version
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -55,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc AUTHORS ChangeLog PKG-INFO README TODO
+%doc AUTHORS ChangeLog README TODO
 %{_bindir}/%name
 %{_datadir}/%name
 %{py_puresitedir}/%name
