@@ -17,6 +17,7 @@ BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:  python-devel
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
+BuildRequires:  help2man
 Requires:	wget
 Requires:	pygtk2.0 
 Requires:       pygtk2.0-libglade
