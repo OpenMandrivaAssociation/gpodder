@@ -1,15 +1,13 @@
 %define name	gpodder
 %define version	0.9.4
-%define svn 345
-%define release %mkrel 0.%svn.1
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{svn}.tar.bz2
-Patch: gpodder-r345_libgpod-0.5.x.patch
+Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.bz2
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -36,8 +34,7 @@ podcast feeds for you and automatically downloads all podcasts from as many
 feeds as you like.
 
 %prep
-%setup -q -n %name
-%patch -p0
+%setup -q -n %name-%version
 
 %install
 rm -rf $RPM_BUILD_ROOT
