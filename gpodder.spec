@@ -1,6 +1,6 @@
 %define name	gpodder
 %define version	0.9.4
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
@@ -8,6 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.bz2
+Patch: gpodder-360-use-right-python-id3.patch
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -23,7 +24,8 @@ Requires:	python-pyxml
 # gw for iPod support:
 Requires:	python-gpod
 Requires:	pymad
-Requires:	python-ID3
+Requires:	python-id3
+Requires:	python-eyed3
 # gw required for content length detection
 Requires:	mplayer
 BuildArch:	noarch
@@ -35,6 +37,7 @@ feeds as you like.
 
 %prep
 %setup -q -n %name-%version
+%patch -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
