@@ -9,7 +9,6 @@ Release: 	%{release}
 
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.bz2
 Patch: gpodder-360-use-right-python-id3.patch
-Patch1: gpodder-r362-file-length.patch
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -39,7 +38,6 @@ feeds as you like.
 %prep
 %setup -q -n %name-%version
 %patch -p0
-%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
