@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.9.5
+%define version	0.10.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -7,7 +7,7 @@ Summary: 	A graphical podcast catcher
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.bz2
+Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.gz
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -16,10 +16,9 @@ BuildRequires:  python-devel
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  help2man
-Requires:	wget
 Requires:	pygtk2.0 
 Requires:       pygtk2.0-libglade
-Requires:	python-pyxml
+Requires:       python-feedparser
 # gw for iPod support:
 Requires:	python-gpod
 Requires:	pymad
