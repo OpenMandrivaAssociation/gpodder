@@ -1,6 +1,6 @@
 %define name	gpodder
-%define version	0.10.1
-%define release %mkrel 2
+%define version	0.10.2
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
@@ -22,7 +22,6 @@ Requires:       python-feedparser
 # gw for iPod support:
 Requires:	python-gpod
 Requires:	pymad
-Requires:	python-id3
 Requires:	python-eyed3
 # gw required for content length detection
 Requires:	mplayer
