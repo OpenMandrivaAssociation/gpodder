@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.10.2
+%define version	0.10.3
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -55,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc AUTHORS ChangeLog README TODO
+%doc AUTHORS ChangeLog README
 %{_bindir}/%name
 %{_datadir}/%name
 %{py_puresitedir}/%name
