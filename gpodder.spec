@@ -11,6 +11,7 @@ Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:  python-devel
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
