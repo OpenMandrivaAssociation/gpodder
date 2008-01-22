@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.10.3
+%define version	0.10.4
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -8,6 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.gz
+Patch: gpodder-0.10.4-desktopentry.patch
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -34,6 +35,7 @@ feeds as you like.
 
 %prep
 %setup -q -n %name-%version
+%patch -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 %find_lang %name
 desktop-file-install --vendor="" \
   --remove-category="Application" \
-  --add-category="GTK;X-MandrivaLinux-Internet-News;Network;News" \
+  --add-category="GTK;Network;News" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %clean
