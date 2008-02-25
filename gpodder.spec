@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.10.4
+%define version	0.11.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -8,7 +8,6 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.gz
-Patch: gpodder-0.10.4-desktopentry.patch
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -26,6 +25,10 @@ Requires:	pymad
 Requires:	python-eyed3
 # gw required for content length detection
 Requires:	mplayer
+# gw for transcoding and tagging Ogg Vorbis
+Suggests:	vorbis-tools
+# gw for Bluetooth support
+Suggests: bluez-utils gnome-bluetooth
 BuildArch:	noarch
 
 %description
@@ -35,14 +38,12 @@ feeds as you like.
 
 %prep
 %setup -q -n %name-%version
-%patch -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 %find_lang %name
 desktop-file-install --vendor="" \
-  --remove-category="Application" \
   --add-category="GTK;Network;News" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
