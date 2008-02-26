@@ -1,6 +1,6 @@
 %define name	gpodder
 %define version	0.11.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
@@ -8,6 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.gz
+Patch: bluetooth-transfer.patch
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -28,7 +29,7 @@ Requires:	mplayer
 # gw for transcoding and tagging Ogg Vorbis
 Suggests:	vorbis-tools
 # gw for Bluetooth support
-Suggests: bluez-utils gnome-bluetooth
+Suggests: bluez-utils bluez-gnome
 BuildArch:	noarch
 
 %description
@@ -38,6 +39,7 @@ feeds as you like.
 
 %prep
 %setup -q -n %name-%version
+%patch -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
