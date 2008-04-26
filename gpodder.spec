@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.11.1
+%define version	0.11.2
 %define svn 610
 %define release %mkrel 1
 
@@ -60,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc AUTHORS ChangeLog README
+%doc ChangeLog README 
 %{_bindir}/%name
 %{_datadir}/%name
 %{py_puresitedir}/%name
