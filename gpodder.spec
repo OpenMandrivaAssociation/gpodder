@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.11.2
+%define version	0.11.3
 %define svn 610
 %define release %mkrel 1
 
