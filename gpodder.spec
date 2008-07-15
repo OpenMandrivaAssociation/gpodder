@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.11.3
+%define version	0.12.0
 %define svn 610
 %define release %mkrel 1
 
@@ -21,6 +21,9 @@ BuildRequires:  help2man
 Requires:	pygtk2.0 
 Requires:       pygtk2.0-libglade
 Requires:       python-feedparser
+%if %mdkversion <= 200700
+Requires:       python-sqlite2
+%endif
 # gw for iPod support:
 Requires:	python-gpod
 Requires:	pymad
@@ -29,6 +32,7 @@ Requires:	python-eyed3
 Requires:	mplayer
 # gw for transcoding and tagging Ogg Vorbis
 Suggests:	vorbis-tools
+Suggests:	lame
 # gw for Bluetooth support
 Suggests: bluez-utils bluez-gnome
 BuildArch:	noarch
