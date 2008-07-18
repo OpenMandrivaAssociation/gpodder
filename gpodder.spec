@@ -1,7 +1,7 @@
 %define name	gpodder
 %define version	0.12.0
 %define svn 610
-%define release %mkrel 1
+%define release %mkrel 2
 
 
 Name: 	 	%{name}
@@ -10,6 +10,7 @@ Version: 	%{version}
 Release: 	%{release}
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.gz
 #Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-r%{svn}.tar.bz2
+Patch: gpodder-r778-fix-ipod-sync.patch
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -18,7 +19,7 @@ BuildRequires:  python-devel
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  help2man
-Requires:	pygtk2.0 
+Requires:	pygtk2.0 >= 2.6
 Requires:       pygtk2.0-libglade
 Requires:       python-feedparser
 %if %mdkversion <= 200700
@@ -44,6 +45,7 @@ feeds as you like.
 
 %prep
 %setup -q
+%patch
 
 %install
 rm -rf $RPM_BUILD_ROOT
