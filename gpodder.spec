@@ -1,8 +1,6 @@
 %define name	gpodder
-%define version	0.12.0
-%define svn 610
-%define release %mkrel 2
-
+%define version	0.12.1
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
@@ -10,7 +8,6 @@ Version: 	%{version}
 Release: 	%{release}
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.gz
 #Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-r%{svn}.tar.bz2
-Patch: gpodder-r778-fix-ipod-sync.patch
 URL:		http://www.perli.net/projekte/gpodder/
 License:	GPL
 Group:		Networking/News
@@ -45,7 +42,6 @@ feeds as you like.
 
 %prep
 %setup -q
-%patch
 
 %install
 rm -rf $RPM_BUILD_ROOT
