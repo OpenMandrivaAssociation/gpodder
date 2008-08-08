@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.12.1
+%define version	0.12.2
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -9,7 +9,8 @@ Release: 	%{release}
 Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.gz
 #Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-r%{svn}.tar.bz2
 URL:		http://www.perli.net/projekte/gpodder/
-License:	GPL
+#gw SimpleGladeApp is LGPL
+License:	GPLv3+ and LGPLv2+
 Group:		Networking/News
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:  python-devel
@@ -54,15 +55,17 @@ desktop-file-install --vendor="" \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%if %mdvver < 200900
 %post
 %update_icon_cache hicolor
-		
 %postun
 %clean_icon_cache hicolor
+%endif
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc ChangeLog README 
+%doc README 
+#ChangeLog 
 %{_bindir}/%name
 %{_datadir}/%name
 %{py_puresitedir}/%name
