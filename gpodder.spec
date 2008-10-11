@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.12.3
+%define version	0.13.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -25,6 +25,8 @@ Requires:       python-sqlite2
 %endif
 # gw for iPod support:
 Requires:	python-gpod
+#gw MTP player support:
+Requires:	python-pymtp
 Requires:	pymad
 Requires:	python-eyed3
 # gw required for content length detection
