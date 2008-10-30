@@ -1,12 +1,12 @@
 %define name	gpodder
-%define version	0.13.0
+%define version	0.13.1
 %define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
 Version: 	%{version}
 Release: 	%{release}
-Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-%{version}.tar.gz
+Source:		http://download.berlios.de/gpodder/%{name}-%{version}.tar.gz
 #Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-r%{svn}.tar.bz2
 URL:		http://www.perli.net/projekte/gpodder/
 #gw SimpleGladeApp is LGPL
