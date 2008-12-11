@@ -14,7 +14,7 @@ License:	GPLv3+ and LGPLv2+
 Group:		Networking/News
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:  python-devel
-BuildRequires:  ImageMagick
+BuildRequires:  imagemagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  help2man
 Requires:	pygtk2.0 >= 2.6
