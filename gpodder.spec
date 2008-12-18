@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.13.1
+%define version	0.14.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -31,6 +31,8 @@ Requires:	pymad
 Requires:	python-eyed3
 # gw required for content length detection
 Requires:	mplayer
+# gw required for HTML show notes
+Requires: gnome-python-gtkhtml2
 # gw for transcoding and tagging Ogg Vorbis
 Suggests:	vorbis-tools
 Suggests:	lame
