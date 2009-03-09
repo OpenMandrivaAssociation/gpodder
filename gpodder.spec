@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.14.1
+%define version	0.15.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -69,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README 
-#ChangeLog 
+%{_bindir}/gpodder-backup
 %{_bindir}/%name
 %{_datadir}/%name
 %{py_puresitedir}/%name
