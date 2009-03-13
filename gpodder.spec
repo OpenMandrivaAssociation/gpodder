@@ -1,6 +1,6 @@
 %define name	gpodder
-%define version	0.15.0
-%define release %mkrel 2
+%define version	0.15.1
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
@@ -8,8 +8,6 @@ Version: 	%{version}
 Release: 	%{release}
 Source:		http://download.berlios.de/gpodder/%{name}-%{version}.tar.gz
 #Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-r%{svn}.tar.bz2
-#gw Fix "You must not use 8-bit bytestrings" (bug 375) for Python 2.6
-Patch: gpodder-f500f586cab5b93e15a78366811567792076f1a3.patch
 URL:		http://www.perli.net/projekte/gpodder/
 #gw SimpleGladeApp is LGPL
 License:	GPLv3+ and LGPLv2+
@@ -49,7 +47,6 @@ feeds as you like.
 
 %prep
 %setup -q
-%patch -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
