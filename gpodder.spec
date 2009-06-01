@@ -13,6 +13,7 @@ License:	GPLv3+ and LGPLv2+
 Group:		Networking/News
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:  python-devel
+BuildRequires:  python-feedparser
 BuildRequires:  imagemagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  help2man
