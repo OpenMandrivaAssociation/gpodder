@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.15.2
+%define version	0.16.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -7,7 +7,6 @@ Summary: 	A graphical podcast catcher
 Version: 	%{version}
 Release: 	%{release}
 Source:		http://download.berlios.de/gpodder/%{name}-%{version}.tar.gz
-#Source:		http://perli.net/projekte/gpodder/releases/%{version}/%{name}-r%{svn}.tar.bz2
 URL:		http://www.perli.net/projekte/gpodder/
 #gw SimpleGladeApp is LGPL
 License:	GPLv3+ and LGPLv2+
@@ -69,6 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README 
+%{_bindir}/gpo
 %{_bindir}/gpodder-backup
 %{_bindir}/%name
 %{_datadir}/%name
