@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	0.16.1
+%define version	0.17.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
