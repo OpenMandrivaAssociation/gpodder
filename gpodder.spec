@@ -1,12 +1,14 @@
 %define name	gpodder
 %define version	2.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
 Version: 	%{version}
 Release: 	%{release}
 Source:		http://download.berlios.de/gpodder/%{name}-%{version}.tar.gz
+#gw else it fails on Cooker with the current GTK+
+Patch:		gpodder-fix-for-new-gtk.patch
 URL:		http://www.perli.net/projekte/gpodder/
 #gw SimpleGladeApp is LGPL
 License:	GPLv3+ and LGPLv2+
@@ -47,6 +49,7 @@ feeds as you like.
 
 %prep
 %setup -q
+%patch -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
