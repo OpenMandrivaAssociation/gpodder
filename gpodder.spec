@@ -17,6 +17,7 @@ BuildRequires:  python-feedparser
 BuildRequires:  imagemagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  help2man
+BuildRequires:  intltool
 Requires:	pygtk2.0 >= 2.6
 Requires:       pygtk2.0-libglade
 Requires:       python-feedparser
