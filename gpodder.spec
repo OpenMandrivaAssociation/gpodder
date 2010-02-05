@@ -1,14 +1,12 @@
 %define name	gpodder
-%define version	2.1
-%define release %mkrel 2
+%define version	2.2
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
 Version: 	%{version}
 Release: 	%{release}
 Source:		http://download.berlios.de/gpodder/%{name}-%{version}.tar.gz
-#gw else it fails on Cooker with the current GTK+
-Patch:		gpodder-fix-for-new-gtk.patch
 URL:		http://www.perli.net/projekte/gpodder/
 #gw SimpleGladeApp is LGPL
 License:	GPLv3+ and LGPLv2+
@@ -29,6 +27,7 @@ Requires:       python-sqlite2
 Requires:	python-gpod
 #gw MTP player support:
 Requires:	python-pymtp
+Requires:	python-mygpoclient
 Requires:	pymad
 Requires:	python-eyed3
 # gw required for content length detection
@@ -49,7 +48,6 @@ feeds as you like.
 
 %prep
 %setup -q
-%patch -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -75,6 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/gpo
 %{_bindir}/gpodder-backup
 %{_bindir}/%name
+%_datadir/dbus-1/services/org.gpodder.service
 %{_datadir}/%name
 %{py_puresitedir}/%name
 %{py_puresitedir}/*.egg-info
