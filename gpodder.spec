@@ -44,6 +44,8 @@ Suggests:	vorbis-tools
 Suggests:	lame
 # gw for Bluetooth support
 Suggests: bluez-utils bluez-gnome
+#gw for rockbox cover support
+Suggests: python-imaging
 BuildArch:	noarch
 
 %description
