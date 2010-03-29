@@ -1,15 +1,12 @@
 %define name	gpodder
-%define version	2.3
-%define release %mkrel 2
+%define version	2.4
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
 Version: 	%{version}
 Release: 	%{release}
 Source:		http://download.berlios.de/gpodder/%{name}-%{version}.tar.gz
-#gw remove bogus dep on python-pybluez
-#https://bugs.gpodder.org/show_bug.cgi?id=932
-Patch0:		gpodder-remove-pybluez-dep.patch
 URL:		http://www.perli.net/projekte/gpodder/
 #gw SimpleGladeApp is LGPL
 License:	GPLv3+ and LGPLv2+
