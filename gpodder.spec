@@ -35,7 +35,7 @@ Requires:	python-eyed3
 # gw required for content length detection
 Requires:	mplayer
 # gw required for HTML show notes
-Requires: gnome-python-gtkhtml2
+Requires: python-webkitgtk
 # gw for transcoding and tagging Ogg Vorbis
 Suggests:	vorbis-tools
 Suggests:	lame
