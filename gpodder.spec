@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	2.5
+%define version	2.7
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -29,7 +29,7 @@ Requires:       python-sqlite2
 Requires:	python-gpod
 #gw MTP player support:
 Requires:	python-pymtp
-Requires:	python-mygpoclient
+Requires:	python-mygpoclient >= 1.4
 Requires:	pymad
 Requires:	python-eyed3
 # gw required for content length detection
