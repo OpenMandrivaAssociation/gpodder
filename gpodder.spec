@@ -19,6 +19,7 @@ BuildRequires:  imagemagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  help2man
 BuildRequires:  intltool
+BuildRequires:	python-mygpoclient
 Requires:	pygtk2.0 >= 2.6
 Requires:       pygtk2.0-libglade
 Requires:       python-feedparser
