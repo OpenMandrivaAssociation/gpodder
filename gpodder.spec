@@ -1,6 +1,6 @@
 %define name	gpodder
-%define version	2.9
-%define release %mkrel 2
+%define version	2.10
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	A graphical podcast catcher
