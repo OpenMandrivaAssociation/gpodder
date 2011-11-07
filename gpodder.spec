@@ -1,5 +1,5 @@
 %define name	gpodder
-%define version	2.20
+%define version	3.0.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -13,37 +13,24 @@ License:	GPLv3+ and LGPLv2+
 Group:		Networking/News
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:  python-devel
-BuildRequires:  python-feedparser
+BuildRequires:  python-feedparser >= 5.0.1
 BuildRequires:	python-mygpoclient
 BuildRequires:  imagemagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  help2man
 BuildRequires:  intltool
-BuildRequires:	python-mygpoclient
+BuildRequires:	python-mygpoclient >= 1.4
 Requires:	pygtk2.0 >= 2.6
 Requires:       pygtk2.0-libglade
-Requires:       python-feedparser
+Requires:       python-feedparser >= 5.0.1
 %if %mdkversion <= 200700
 Requires:       python-sqlite2
 %endif
-# gw for iPod support:
-Requires:	python-gpod
-#gw MTP player support:
-Requires:	python-pymtp
 Requires:	python-mygpoclient >= 1.4
-Requires:	pymad
-Requires:	python-eyed3
-# gw required for content length detection
-Requires:	mplayer
 # gw required for HTML show notes
 Requires: python-webkitgtk
-# gw for transcoding and tagging Ogg Vorbis
-Suggests:	vorbis-tools
-Suggests:	lame
 # gw for Bluetooth support
 Suggests: bluez-utils bluez-gnome
-#gw for rockbox cover support
-Suggests: python-imaging
 BuildArch:	noarch
 
 %description
@@ -77,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc README 
 %{_bindir}/gpo
-%{_bindir}/gpodder-backup
+%{_bindir}/gpodder-migrate2tres
 %{_bindir}/%name
 %_datadir/dbus-1/services/org.gpodder.service
 %{_datadir}/%name
