@@ -73,6 +73,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %{_datadir}/applications/*
 %_datadir/icons/hicolor/*/apps/gpodder.*
-%{_datadir}/pixmaps/gpodd*.png
 
 
