@@ -41,6 +41,11 @@ feeds as you like.
 %prep
 %setup -q
 %apply_patches
+#gw fix directory structure:
+cd share/icons/hicolor
+for dir in *x*;do
+(cd $dir;mkdir apps;mv *.png apps)
+done
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -52,13 +57,6 @@ desktop-file-install --vendor="" \
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%if %mdvver < 200900
-%post
-%update_icon_cache hicolor
-%postun
-%clean_icon_cache hicolor
-%endif
 
 %files -f %name.lang
 %defattr(-,root,root)
