@@ -41,11 +41,6 @@ feeds as you like.
 %prep
 %setup -q
 %apply_patches
-#gw fix directory structure:
-cd share/icons/hicolor
-for dir in *x*;do
-(cd $dir;mkdir apps;mv *.png apps)
-done
 
 %install
 rm -rf $RPM_BUILD_ROOT
