@@ -40,7 +40,7 @@ feeds as you like.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
