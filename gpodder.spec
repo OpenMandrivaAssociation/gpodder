@@ -7,7 +7,7 @@ Summary: 	A graphical podcast catcher
 Version: 	%{version}
 Release: 	%{release}
 Source:		http://gpodder.org/src/%{name}-%{version}.tar.gz
-URL:		http://gpodder.org/
+URL:		https://gpodder.org/
 #gw SimpleGladeApp is LGPL
 License:	GPLv3+ and LGPLv2+
 Group:		Networking/News
